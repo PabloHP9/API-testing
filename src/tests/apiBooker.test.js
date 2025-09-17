@@ -24,6 +24,6 @@ describe('Booker API test', () => {
 
     test('delete a booking', async () => {
         await bookerAPI.DeleteBooking();
-        await bookerAPI.checkDelete();
+        await bookerAPI.checkDeleteHeaders();
     })
 });

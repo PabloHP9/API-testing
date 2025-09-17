@@ -117,7 +117,7 @@ class BookerAPI {
         console.log(this.createData);
     }
 
-    async checkDelete() {
+    async checkDeleteHeaders() {
         expect(this.deletestatus).toHaveProperty('content-length');
         expect(this.deletestatus).toHaveProperty('content-type');
         expect(this.deletestatus).toHaveProperty('nel')
