@@ -113,7 +113,7 @@ class BookerAPI {
 
     async checkCreateStatus() {
         expect(this.createStatus).toBe(200);
-        console.log('the status is',this.createStatus.status);
+        console.log('the status is',this.createStatus);
         console.log(this.createData);
     }
 
