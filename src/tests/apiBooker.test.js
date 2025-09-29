@@ -18,9 +18,10 @@ describe('Booker API test', () => {
     })
 
     test('Create a booking', async () => {
-        const { status, data }  = await bookerAPI.createBooking();
+        const { status, data, responseTime }  = await bookerAPI.createBooking();
         expect(status).toBe(200);
         console.log("The status is", status);
+        expect(responseTime).toBeLessThanOrEqual(300)
         console.log(data);
     });
 

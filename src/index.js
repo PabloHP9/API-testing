@@ -20,7 +20,7 @@ class BookerAPI {
 
   async createBooking() {
     const response = await bookingService.createBooking(bookingData);
-    return { status: response.status, data: response.data };
+    return { status: response.status, data: response.data, responseTime: response.responseTime };
 }
 
   async DeleteBooking() {

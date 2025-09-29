@@ -11,12 +11,19 @@ const axiosClient = axios.create({
 
 async function apiRequest(method, endpoint, data = {}, headers = {}) {
     try {
+        const startTime = Date.now();
         const response = await axiosClient({
             method,
             url: endpoint,
             data,
             headers,
         });
+
+        const endTime = Date.now();
+        const responseTime = endTime - startTime; 
+        console.log(`[API Request] ${endpoint} took ${responseTime} ms`);
+        response.responseTime = responseTime;
+
         return response;
     }   catch (error) {
         return error.response || new Error('API request error');
